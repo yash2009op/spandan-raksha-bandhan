@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Spandan 🎸</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#eee;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(155,0,255,.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,0,70,.12),
+            transparent 30%
+        ),
+
+        #050505;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    z-index:-2;
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        );
+
+    background-size:100% 5px;
+}
+
+/* ================= NAV ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(5,5,5,.8);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+    font-family:'Orbitron',sans-serif;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:#d18aff;
+}
+
+nav a{
+    color:#aaa;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d18aff;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 70px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.music-icon{
+    font-size:85px;
+
+    animation:
+        rock 1.8s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 20px rgba(209,138,255,.5)
+        );
+}
+
+@keyframes rock{
+
+    0%,100%{
+        transform:rotate(-7deg);
+    }
+
+    50%{
+        transform:rotate(7deg);
+    }
+
+}
+
+.small-title{
+
+    margin-top:25px;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    color:#c878ff;
+
+    text-transform:uppercase;
+}
+
+.hero h1{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:
+        clamp(55px,11vw,120px);
+
+    letter-spacing:8px;
+
+    margin:8px 0;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px rgba(209,138,255,.7),
+        0 0 35px rgba(209,138,255,.35);
+}
+
+.hero h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:20px;
+
+    color:#ff5d8f;
+
+    letter-spacing:3px;
+}
+
+.hero p{
+
+    max-width:650px;
+
+    margin:25px auto;
+
+    color:#999;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+/* BUTTON */
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border:1px solid #c878ff;
+
+    color:#dba6ff;
+
+    background:transparent;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.35s;
+}
+
+.btn:hover{
+
+    background:#c878ff;
+
+    color:#050505;
+
+    box-shadow:
+        0 0 30px rgba(200,120,255,.35);
+
+    transform:translateY(-4px);
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:100px 8%;
+}
+
+.label{
+
+    text-align:center;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    color:#c878ff;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+}
+
+.title{
+
+    text-align:center;
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:
+        clamp(32px,5vw,55px);
+
+    letter-spacing:3px;
+
+    color:#fff;
+}
+
+.subtitle{
+
+    max-width:650px;
+
+    margin:20px auto 55px;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+/* ================= ROCK CARDS ================= */
+
+.cards{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px,1fr)
+        );
+
+    gap:22px;
+}
+
+.card{
+
+    padding:35px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.01);
+
+    border-color:#c878ff;
+
+    box-shadow:
+        0 15px 40px rgba(150,0,255,.12);
+}
+
+.card-icon{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+}
+
+.card h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#d18aff;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    color:#858585;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+/* ================= NEPAL ================= */
+
+.nepal{
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,40,90,.08),
+            transparent 60%
+        );
+}
+
+.nepal-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:50px 35px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    background:#090909;
+}
+
+.nepal-flag{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+}
+
+.nepal-box h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#ff658f;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.nepal-box p{
+
+    color:#888;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+/* ================= LETTER ================= */
+
+.letter-section{
+
+    background:#080808;
+}
+
+.letter{
+
+    max-width:800px;
+
+    margin:auto;
+
+    padding:50px 45px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #080808
+        );
+
+    border:
+
+        1px solid
+        rgba(209,138,255,.35);
+
+    box-shadow:
+
+        0 20px 70px
+        rgba(0,0,0,.5);
+
+    position:relative;
+}
+
+.letter::before{
+
+    content:"♫";
+
+    position:absolute;
+
+    right:30px;
+
+    top:20px;
+
+    font-size:75px;
+
+    color:
+        rgba(209,138,255,.07);
+}
+
+.letter-title{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#d18aff;
+
+    font-size:27px;
+
+    margin-bottom:30px;
+
+    letter-spacing:2px;
+}
+
+.letter p{
+
+    color:#aaa;
+
+    line-height:2;
+
+    font-size:14px;
+
+    margin-bottom:18px;
+}
+
+.letter strong{
+
+    color:#ff6b99;
+}
+
+/* ================= KINDER JOY ================= */
+
+.gift-section{
+
+    text-align:center;
+}
+
+.gift{
+
+    width:190px;
+    height:175px;
+
+    margin:55px auto 30px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.gift:hover{
+
+    transform:
+        scale(1.08)
+        rotate(-2deg);
+}
+
+.kinder{
+
+    position:absolute;
+
+    left:15px;
+    bottom:0;
+
+    width:160px;
+    height:120px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #fff 0 48%,
+            #f32b38 48% 100%
+        );
+
+    border-radius:
+        75px 75px 30px 30px;
+
+    border:3px solid #ddd;
+
+    box-shadow:
+        0 0 35px rgba(255,255,255,.12);
+}
+
+.kinder::after{
+
+    content:"KINDER";
+
+    position:absolute;
+
+    top:55px;
+    left:38px;
+
+    color:#111;
+
+    font-weight:800;
+
+    font-size:17px;
+}
+
+.wrapper{
+
+    position:absolute;
+
+    top:25px;
+    left:0;
+
+    width:190px;
+    height:35px;
+
+    background:#f8f8f8;
+
+    border-radius:15px;
+
+    border:2px solid #ddd;
+
+    z-index:5;
+
+    transition:.7s;
+}
+
+.gift.open .wrapper{
+
+    transform:
+        translateY(-75px)
+        rotate(8deg);
+}
+
+/* ================= SURPRISE ================= */
+
+.surprise{
+
+    display:none;
+
+    max-width:650px;
+
+    margin:50px auto;
+
+    padding:45px 30px;
+
+    background:#0d0d0d;
+
+    border:1px solid #ff658f;
+
+    animation:reveal .7s ease;
+}
+
+@keyframes reveal{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+}
+
+.surprise h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#ff658f;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+}
+
+.surprise p{
+
+    color:#999;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+.big{
+
+    color:#d18aff !important;
+
+    font-size:19px !important;
+}
+
+/* ================= FINAL ================= */
+
+.final{
+
+    display:none;
+
+    min-height:80vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(200,120,255,.13),
+            transparent 60%
+        );
+}
+
+.final-content{
+
+    max-width:750px;
+}
+
+.final-icon{
+
+    font-size:75px;
+
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.15);
+    }
+}
+
+.final h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:
+        clamp(32px,6vw,65px);
+
+    color:#fff;
+
+    margin:25px 0;
+
+    text-shadow:
+        0 0 30px rgba(209,138,255,.5);
+}
+
+.final p{
+
+    color:#999;
+
+    line-height:2;
+
+    font-size:15px;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    z-index:5000;
+
+    pointer-events:none;
+
+    font-size:18px;
+
+    animation:
+        fall 3s linear forwards;
+}
+
+@keyframes fall{
+
+    to{
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+    }
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    background:#020202;
+
+    color:#666;
+
+    font-size:12px;
+
+    line-height:2;
+}
+
+footer span{
+
+    color:#d18aff;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    nav{
+        padding:16px 6%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    section{
+        padding:80px 5%;
+    }
+
+    .hero h1{
+        letter-spacing:4px;
+    }
+
+    .letter{
+        padding:35px 23px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- NAV -->
+
+<nav>
+
+    <div class="logo">
+        SPANDAN
+    </div>
+
+    <div>
+
+        <a href="#home">HOME</a>
+
+        <a href="#vibe">VIBE</a>
+
+        <a href="#nepal">NEPAL</a>
+
+        <a href="#letter">LETTER</a>
+
+        <a href="#gift">GIFT</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="music-icon">
+            🎸
+        </div>
+
+        <div class="small-title">
+            A Raksha Bandhan Surprise
+        </div>
+
+        <h1>
+            SPANDAN
+        </h1>
+
+        <h2>
+            ROCKSTAR BOHINA 🎧
+        </h2>
+
+        <p>
+
+            For the girl who likes
+            rocking songs, Kinder Joy,
+            unlimited masti and somehow
+            manages to make every conversation chaotic. 😂
+
+        </p>
+
+        <a
+            href="#vibe"
+            class="btn"
+        >
+            START THE SHOW
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- VIBE -->
+
+<section id="vibe">
+
+    <div class="label">
+        SPANDAN ENERGY
+    </div>
+
+    <h2 class="title">
+        THE ROCKSTAR FILES
+    </h2>
+
+    <p class="subtitle">
+
+        After conducting absolutely
+        unnecessary research,
+        these facts have been officially confirmed.
+
+    </p>
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎸
+            </div>
+
+            <h3>
+                ROCKSTAR
+            </h3>
+
+            <p>
+                Give her a good rocking song
+                and the mission is complete.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                😂
+            </div>
+
+            <h3>
+                MASTIKHOR
+            </h3>
+
+            <p>
+                Normal conversation?
+                Not guaranteed. Masti?
+                100% guaranteed.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🍫
+            </div>
+
+            <h3>
+                KINDER JOY
+            </h3>
+
+            <p>
+                One Kinder Joy can probably
+                solve 73% of life's problems.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">
+                🎮
+            </div>
+
+            <h3>
+                CODM
+            </h3>
+
+            <p>
+                CODM + VC + masti =
+                memories that randomly hit later.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- NEPAL -->
+
+<section
+    class="nepal"
+    id="nepal"
+>
+
+    <div class="label">
+        A LITTLE NOTE
+    </div>
+
+    <h2 class="title">
+        FROM HERE TO NEPAL 🇳🇵
+    </h2>
+
+    <p class="subtitle">
+        Distance doesn't stop a Rakhi wish.
+    </p>
+
+
+    <div class="nepal-box">
+
+        <div class="nepal-flag">
+            🇳🇵
+        </div>
+
+        <h3>
+            TAKE CARE, BOHINA
+        </h3>
+
+        <p>
+
+            Nepal mein thoda mahaul theek nahi hai,
+            toh please thoda sambhal kar rehna.
+
+            <br><br>
+
+            Apna khayal rakhna is more important
+            than any gift.
+
+            ❤️
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section
+    class="letter-section"
+    id="letter"
+>
+
+    <div class="label">
+        FROM YOUR BHAI
+    </div>
+
+    <h2 class="title">
+        A LETTER FOR SPANDAN
+    </h2>
+
+    <p class="subtitle">
+        Okay bohina... emotional damage incoming. 🤧
+    </p>
+
+
+    <div class="letter">
+
+        <div class="letter-title">
+            ABBBYYYYYYYYYY! 🎸
+        </div>
+
+
+        <p>
+
+            <strong>
+                Happy Raksha Bandhan bohina! ❤️
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            Kyaa kareee...
+            kaisa laga ye website?
+            Mast hai na? 😂
+
+            <br><br>
+
+            Toh fir itni pyaar se banaya hai
+            tere liye hehehehe.
+
+        </p>
+
+
+        <p>
+
+            Aaj Rakhi hai.
+
+            <br><br>
+
+            Mujhe Rakhi toh nahi mil paayi,
+            but ye gift de raha hu chota sa.
+
+            <br><br>
+
+            Syd pasand aaye ya na aaye...
+            <strong>
+                idk 🤧
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            Sorry yaar,
+            <strong>
+                Kinder Joy bhi nahi de paa raha hu 😭😭
+            </strong>
+
+            <br><br>
+
+            Koi na bahen,
+            iss Rakhi itna hi. ❤️
+
+        </p>
+
+
+        <p>
+
+            Waise apna khayal rakhna.
+
+            <br><br>
+
+            Nepal mein thoda,
+            <strong>
+                yk, theek nahi hai mahaul
+            </strong>
+            so thoda sambhal kar.
+
+        </p>
+
+
+        <p>
+
+            Aur koi problem ho bahen,
+            toh bhai hu main.
+
+            <br><br>
+
+            Syd main puri tarah se solve kar paau
+            ya nahi...
+
+            <strong>
+                idk.
+            </strong>
+
+            <br><br>
+
+            But haan,
+            main apni puri kosis karunga
+            tumhari raksha karne ki.
+
+            Oki bohina? ❤️
+
+        </p>
+
+
+        <p>
+
+            Tere saath khele huye
+            <strong>
+                CODM
+            </strong>
+
+            aur VC mein baat karte the...
+
+            <br><br>
+
+            Uski yaad aa rahi hai. 🤧
+
+        </p>
+
+
+        <p>
+
+            Koi na bahen...
+
+            <br><br>
+
+            <strong>
+                HAPPY RAKSHA BANDHAN! ❤️🎸
+            </strong>
+
+        </p>
+
+
+        <p>
+
+            — Your Bhai
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- GIFT -->
+
+<section
+    class="gift-section"
+    id="gift"
+>
+
+    <div class="label">
+        THE GIFT
+    </div>
+
+    <h2 class="title">
+        OKAY... KINDER JOY NAHI MILA 😭
+    </h2>
+
+    <p class="subtitle">
+
+        But something else
+        is waiting inside.
+
+    </p>
+
+
+    <div
+        class="gift"
+        id="giftBox"
+        onclick="openGift()"
+    >
+
+        <div class="wrapper"></div>
+
+        <div class="kinder"></div>
+
+    </div>
+
+
+    <button
+        class="btn"
+        onclick="openGift()"
+    >
+        OPEN YOUR SURPRISE
+    </button>
+
+
+    <div
+        class="surprise"
+        id="surprise"
+    >
+
+        <h2>
+            MUHAHAHAHA! 🎸
+        </h2>
+
+
+        <p>
+
+            Kinder Joy nahi de paaya...
+
+            <br><br>
+
+            Toh website hi Kinder Joy
+            se zyada bada bana diya. 😂
+
+        </p>
+
+
+        <br>
+
+
+        <p class="big">
+
+            Your actual gift:
+            one extremely unnecessary,
+            slightly chaotic,
+            but genuinely made-with-love
+            website. ❤️
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            And yes...
+
+            <br><br>
+
+            CODM + VC memories
+            are still remembered. 🤧
+
+        </p>
+
+
+        <br>
+
+
+        <button
+            class="btn"
+            onclick="showFinal()"
+        >
+            ONE LAST THING
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section
+    class="final"
+    id="final"
+>
+
+    <div class="final-content">
+
+        <div class="final-icon">
+            🎸❤️
+        </div>
+
+
+        <h2>
+            HAPPY RAKSHA BANDHAN,
+            BOHINA!
+        </h2>
+
+
+        <p>
+
+            Door ho,
+            country alag hai,
+            Rakhi physically nahi baandh paayi...
+
+            <br><br>
+
+            But bhai-behen ki masti
+            distance se thodi khatam hoti hai. 😌
+
+            <br><br>
+
+            <strong>
+                Stay safe.
+                Stay happy.
+                Keep rocking. 🎸
+            </strong>
+
+            <br><br>
+
+            Aur haan...
+
+            <br>
+
+            Kinder Joy next time pakka. 😂🍫
+
+        </p>
+
+
+        <br>
+
+
+        <div style="font-size:30px;">
+            🎸 ✦ 🇳🇵 ✦ 🎧 ✦ 🍫 ✦ ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    Made specially for
+
+    <span>
+        Spandan
+    </span>
+
+    <br>
+
+    Happy Raksha Bandhan 🎸
+
+    <br><br>
+
+    <small>
+        From your Bhai — who still owes you a Kinder Joy. 😂
+    </small>
+
+</footer>
+
+
+<script>
+
+
+/* ================= GIFT ================= */
+
+function openGift(){
+
+    const gift =
+        document.getElementById("giftBox");
+
+    const surprise =
+        document.getElementById("surprise");
+
+    gift.classList.add("open");
+
+    surprise.style.display="block";
+
+    createConfetti();
+
+
+    setTimeout(function(){
+
+        surprise.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+    },400);
+
+}
+
+
+/* ================= FINAL ================= */
+
+function showFinal(){
+
+    const final =
+        document.getElementById("final");
+
+    final.style.display="flex";
+
+    createConfetti();
+
+
+    setTimeout(function(){
+
+        final.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+    },300);
+
+}
+
+
+/* ================= CONFETTI ================= */
+
+function createConfetti(){
+
+    const items=[
+
+        "🎸",
+        "🎧",
+        "❤️",
+        "✨",
+        "🎶",
+        "🍫",
+        "⭐",
+        "🇳🇵"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<75;
+        i++
+    ){
+
+        const item =
+            document.createElement("div");
+
+
+        item.className="confetti";
+
+
+        item.innerHTML =
+            items[
+                Math.floor(
+                    Math.random()*items.length
+                )
+            ];
+
+
+        item.style.left =
+            Math.random()*100+"vw";
+
+
+        item.style.animationDuration =
+            (2+Math.random()*2)+"s";
+
+
+        item.style.animationDelay =
+            Math.random()+"s";
+
+
+        document.body.appendChild(item);
+
+
+        setTimeout(function(){
+
+            item.remove();
+
+        },4500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
